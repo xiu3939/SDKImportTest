@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/tv_fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FPS"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_x"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="x"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_fps" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_x"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/tv_x"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_x" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_y"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="y"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_x" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_y"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/tv_y"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_y" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_w"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="w"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_y" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_w"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_w"-->
+<!--        app:layout_constraintTop_toTopOf="@id/tv_w" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_h"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="h"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_w" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_h"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_h"-->
+<!--        app:layout_constraintTop_toTopOf="@id/tv_h" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_dx"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="dx"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_h" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_dx"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/tv_dx"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_dx" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_dy"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="dy"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_dx" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/sb_dy"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/tv_dy"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/tv_dy" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="250dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_show_param"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="30dp"-->
+<!--        android:text="show param"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_start_cam"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="start cam"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_stop_cam"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="stop cam"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/btn_start_cam"-->
+<!--        app:layout_constraintTop_toTopOf="@id/btn_start_cam" />-->
+
+    <Button
+        android:id="@+id/btn_switch_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:text="switch mode"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_fps"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_auto_focus"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="auto_focus"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btn_switch_mode"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/btn_cancel_auto_focus"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="cancel_auto_focus"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/btn_auto_focus"-->
+<!--        app:layout_constraintTop_toTopOf="@id/btn_auto_focus"/>-->
+
+    <com.deepmirror.deepsdk.view.CameraView
+        android:id="@+id/camera_view"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_vol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="volume"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_start" />
+
+        <SeekBar
+            android:id="@+id/sb_vol"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tv_vol"
+            app:layout_constraintTop_toTopOf="@id/tv_vol" />
+
+        <EditText
+            android:id="@+id/et_vol"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_vol"
+            app:layout_constraintLeft_toRightOf="@id/sb_vol"
+            tools:text="12" />
+
+        <Button
+            android:id="@+id/btn_vol_lower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_vol"
+            app:layout_constraintLeft_toRightOf="@id/et_vol" />
+
+        <Button
+            android:id="@+id/btn_vol_raise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_vol"
+            app:layout_constraintLeft_toRightOf="@id/btn_vol_lower" />
+
+        <Button
+            android:id="@+id/btn_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mute"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_vol"
+            app:layout_constraintLeft_toRightOf="@id/btn_vol_raise" />
+
+        <Button
+            android:id="@+id/btn_get_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get_volume"
+            app:layout_constraintLeft_toRightOf="@id/btn_mute"
+            app:layout_constraintTop_toTopOf="@id/btn_mute" />
+
+        <TextView
+            android:id="@+id/tv_vol_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="volMAX"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vol" />
+
+        <SeekBar
+            android:id="@+id/sb_vol_max"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/sb_vol"
+            app:layout_constraintTop_toTopOf="@id/tv_vol_max" />
+
+        <EditText
+            android:id="@+id/et_vol_max"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_vol_max"
+            app:layout_constraintLeft_toRightOf="@id/sb_vol_max"
+            tools:text="5" />
+
+        <Button
+            android:id="@+id/btn_mute_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mute"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_vol_max"
+            app:layout_constraintStart_toEndOf="@+id/et_vol_max" />
+
+        <Button
+            android:id="@+id/btn_get_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get_volMax"
+            app:layout_constraintLeft_toRightOf="@id/btn_mute_max"
+            app:layout_constraintTop_toTopOf="@id/btn_mute_max" />
+
+        <TextView
+            android:id="@+id/tv_vol_attn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="attn"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vol_max" />
+
+        <SeekBar
+            android:id="@+id/sb_vol_attn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/sb_vol"
+            app:layout_constraintTop_toTopOf="@id/tv_vol_attn" />
+
+        <EditText
+            android:id="@+id/et_vol_attn"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_vol_attn"
+            app:layout_constraintLeft_toRightOf="@id/sb_vol_max"
+            tools:text="127" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="30dp"
+            android:background="#000000"
+            app:layout_constraintTop_toBottomOf="@id/tv_vol_attn" />
+
+        <TextView
+            android:id="@+id/tv_bright_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="brightCurrent"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <SeekBar
+            android:id="@+id/sb_bright_current"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tv_bright_current"
+            app:layout_constraintTop_toTopOf="@id/tv_bright_current" />
+
+        <EditText
+            android:id="@+id/et_bright_current_value"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="none"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_bright_current"
+            app:layout_constraintLeft_toRightOf="@id/sb_bright_current"
+            tools:text="123" />
+
+        <Button
+            android:id="@+id/btn_get_bright_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get_bright_current"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_bright_current"
+            app:layout_constraintLeft_toRightOf="@id/et_bright_current_value" />
+
+        <TextView
+            android:id="@+id/tv_bright_pwm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="brightPWM"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bright_current" />
+
+        <SeekBar
+            android:id="@+id/sb_bright_pwm"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/sb_bright_current"
+            app:layout_constraintTop_toTopOf="@id/tv_bright_pwm" />
+
+        <EditText
+            android:id="@+id/et_bright_pwm_value"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_bright_pwm"
+            app:layout_constraintLeft_toLeftOf="@id/et_bright_current_value"
+            tools:text="123" />
+
+        <Button
+            android:id="@+id/btn_get_bright_pwm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get_pwm_current"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_bright_pwm"
+            app:layout_constraintLeft_toRightOf="@id/et_bright_current_value" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="30dp"
+            android:background="#000000"
+            app:layout_constraintTop_toBottomOf="@id/tv_bright_pwm" />
+
+        <TextView
+            android:id="@+id/tv_focus"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="focus"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <EditText
+            android:id="@+id/et_focus"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus"
+            app:layout_constraintLeft_toRightOf="@id/tv_focus"
+            tools:text="12" />
+
+        <Button
+            android:id="@+id/btn_get_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus"
+            app:layout_constraintLeft_toRightOf="@id/et_focus" />
+
+        <Button
+            android:id="@+id/btn_set_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus"
+            app:layout_constraintLeft_toRightOf="@id/btn_get_focus" />
+
+        <TextView
+            android:id="@+id/tv_focus_p0"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="param0"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_focus" />
+
+        <EditText
+            android:id="@+id/et_focus_p0"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p0"
+            app:layout_constraintLeft_toRightOf="@id/tv_focus_p0"
+            tools:text="12" />
+
+        <Button
+            android:id="@+id/btn_get_focus_p0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p0"
+            app:layout_constraintLeft_toRightOf="@id/et_focus_p0" />
+
+        <Button
+            android:id="@+id/btn_set_focus_p0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p0"
+            app:layout_constraintLeft_toRightOf="@id/btn_get_focus_p0" />
+
+        <TextView
+            android:id="@+id/tv_focus_p1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="param1"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_focus_p0" />
+
+        <EditText
+            android:id="@+id/et_focus_p1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p1"
+            app:layout_constraintLeft_toRightOf="@id/tv_focus_p1"
+            tools:text="12" />
+
+        <Button
+            android:id="@+id/btn_get_focus_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p1"
+            app:layout_constraintLeft_toRightOf="@id/et_focus_p1" />
+
+        <Button
+            android:id="@+id/btn_set_focus_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_focus_p1"
+            app:layout_constraintLeft_toRightOf="@id/btn_get_focus_p1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
