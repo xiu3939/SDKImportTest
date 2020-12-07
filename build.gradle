@@ -14,11 +14,11 @@ buildscript {
 
 allprojects {
     repositories {
-//        mavenLocal()
-        maven{
-            url 'https://github.com/xiu3939/deepsdk/raw/main/repository'
-
-        }
+        mavenLocal()
+//        maven{
+//            url 'https://github.com/xiu3939/deepsdk/raw/main/repository'
+//
+//        }
         google()
         jcenter()
     }

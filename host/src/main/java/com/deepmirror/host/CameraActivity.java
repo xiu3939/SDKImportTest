@@ -1,6 +1,5 @@
 package com.deepmirror.host;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -76,6 +75,12 @@ public class CameraActivity extends AppCompatActivity {
                 case 35:
                     stopDetectIdCard();
                     break;
+                case 36:
+                    enableMask();
+                    break;
+                case 37:
+                    disableMask();
+                    break;
                 /* Following functions are only for test.*/
                 case 55:
                     enableAutoFocus();
@@ -139,8 +144,8 @@ public class CameraActivity extends AppCompatActivity {
                 list.forEach(r -> Log.e(TAG, r.getRawValue()));
 
                 //start SecondCameraActivity
-                Intent intent=new Intent(CameraActivity.this,SecondCameraActivity.class);
-                startActivity(intent);
+//                Intent intent=new Intent(CameraActivity.this,SecondCameraActivity.class);
+//                startActivity(intent);
             }
 
             @Override
@@ -176,6 +181,13 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
+    private void enableMask() {
+        camView.enableMask();
+    }
+
+    private void disableMask() {
+        camView.disableMask();
+    }
 
     private void enableAutoFocus() {
         camView.enableAutoFocus();

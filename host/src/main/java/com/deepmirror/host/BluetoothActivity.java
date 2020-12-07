@@ -97,6 +97,7 @@ public class BluetoothActivity extends AppCompatActivity {
         }
     };
 
+
     private BluetoothManager.BluetoothListener bluetoothListener = new BluetoothManager.BluetoothListener() {
         @Override
         public void onStateChanged(int i) {
@@ -132,6 +133,7 @@ public class BluetoothActivity extends AppCompatActivity {
         }
 
     };
+
 
 
     ProtocolManager.ProtocolTask protocolTask = new ProtocolManager.ProtocolTask() {
