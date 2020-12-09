@@ -98,6 +98,7 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        Log.e(TAG, "onResume: " );
         super.onResume();
         binding.cameraView.onResume();
         startCamera();
@@ -105,6 +106,7 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        Log.e(TAG, "onPause: " );
         super.onPause();
         binding.cameraView.onPause();
     }
