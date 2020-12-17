@@ -3,6 +3,8 @@
     package="com.deepmirror.host">
 
     <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.usb.host"/>
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>

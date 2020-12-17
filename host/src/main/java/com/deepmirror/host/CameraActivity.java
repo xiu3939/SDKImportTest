@@ -1,5 +1,6 @@
 package com.deepmirror.host;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.deepmirror.deepsdk.DeepSDK;
 import com.deepmirror.deepsdk.imageProcessor.scan.ScanCallback;
 import com.deepmirror.deepsdk.imageProcessor.scan.ScanResult;
 import com.deepmirror.deepsdk.view.CameraView;
@@ -26,14 +28,17 @@ public class CameraActivity extends AppCompatActivity {
 
     private boolean mNeedRender = false;
     private CameraView camView;
+    private BeepManager mBeepManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         initView();
+        mBeepManager = new BeepManager(getApplicationContext());
     }
 
     private void initView() {
@@ -81,6 +86,17 @@ public class CameraActivity extends AppCompatActivity {
                 case 37:
                     disableMask();
                     break;
+                case 38:
+                    enableLaplacian();
+                    break;
+                case 39:
+                    disableLaplacian();
+                    break;
+                case 40:
+                    setFocus40cm();
+                    break;
+
+
                 /* Following functions are only for test.*/
                 case 55:
                     enableAutoFocus();
@@ -98,7 +114,7 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        Log.e(TAG, "onResume: " );
+        Log.e(TAG, "onResume: ");
         super.onResume();
         binding.cameraView.onResume();
         startCamera();
@@ -106,7 +122,7 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        Log.e(TAG, "onPause: " );
+        Log.e(TAG, "onPause: ");
         super.onPause();
         binding.cameraView.onPause();
     }
@@ -130,7 +146,8 @@ public class CameraActivity extends AppCompatActivity {
             Log.e(TAG, fpsStr);
             runOnUiThread(() -> binding.tvFps.setText(fpsStr));
         });
-//        camView.postDelayed(() -> camView.enableAutoFocus(),1000);
+//        camView.enableAutoFocusTof();
+        enableLaplacian();
         startScanBarcode();
     }
 
@@ -144,7 +161,7 @@ public class CameraActivity extends AppCompatActivity {
             public void onScanSuccess(List<ScanResult> list) {
                 Log.e(TAG, String.format("onScanSuccess:get %d result(s):", list.size()));
                 list.forEach(r -> Log.e(TAG, r.getRawValue()));
-
+                mBeepManager.beep();
                 //start SecondCameraActivity
 //                Intent intent=new Intent(CameraActivity.this,SecondCameraActivity.class);
 //                startActivity(intent);
@@ -192,11 +209,30 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void enableAutoFocus() {
-        camView.enableAutoFocus();
+//        camView.enableAutoFocus();
+        camView.enableAutoFocusTof();
     }
 
     private void disableAutoFocus() {
-        camView.disableAutoFocus();
+//        camView.disableAutoFocus();
+        camView.disableAutoFocusTof();
+    }
+
+
+    @SuppressLint("SetTextI18n")
+    private void enableLaplacian() {
+        camView.enableLaplacian(value -> {
+            runOnUiThread(() -> binding.tvLap.setText("LAP:" + value));
+            Log.e(TAG, "Laplacian:" + value);
+        });
+    }
+
+    private void disableLaplacian() {
+        camView.disableLaplacian();
+    }
+
+    private void setFocus40cm() {
+        camView.setFocus(DeepSDK.FOCUS_40CM);
     }
 
 }

@@ -17,7 +17,15 @@
         android:textColor="#FFFFFF"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <TextView
+        android:id="@+id/tv_lap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        tools:text="LAP:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_fps" />
 <!--    <TextView-->
 <!--        android:id="@+id/tv_x"-->
 <!--        android:layout_width="30dp"-->
@@ -155,7 +163,7 @@
         android:textColor="#FFFFFF"
         android:text="switch mode"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_fps"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_lap"/>
 
 <!--    <Button-->
 <!--        android:id="@+id/btn_auto_focus"-->
