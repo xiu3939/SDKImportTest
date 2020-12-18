@@ -46,6 +46,10 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         camView = binding.cameraView;
         binding.btnSwitchMode.setOnClickListener(v -> switchMode());
+        binding.btnTof.setOnClickListener(v->{
+            enableAutoFocusTof();
+            binding.btnTof.setText("TOF ENABLED");
+        });
     }
 
 
@@ -95,8 +99,9 @@ public class CameraActivity extends AppCompatActivity {
                 case 40:
                     setFocus40cm();
                     break;
-
-
+                case 41:
+                    disableAutoFocusTof();
+                    break;
                 /* Following functions are only for test.*/
                 case 55:
                     enableAutoFocus();
@@ -125,6 +130,12 @@ public class CameraActivity extends AppCompatActivity {
         Log.e(TAG, "onPause: ");
         super.onPause();
         binding.cameraView.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mBeepManager.release();
     }
 
     private void switchMode() {
@@ -209,12 +220,18 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void enableAutoFocus() {
-//        camView.enableAutoFocus();
-        camView.enableAutoFocusTof();
+        camView.enableAutoFocus();
     }
 
     private void disableAutoFocus() {
-//        camView.disableAutoFocus();
+        camView.disableAutoFocus();
+    }
+
+    private void enableAutoFocusTof(){
+        camView.enableAutoFocusTof();
+    }
+
+    private void disableAutoFocusTof(){
         camView.disableAutoFocusTof();
     }
 
