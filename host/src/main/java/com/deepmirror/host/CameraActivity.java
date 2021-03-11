@@ -216,6 +216,7 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void calibrate() {
+        mNeedRender=false;
         camView.startCalibration((dx, dy) -> {
             setGlobalAEAF();
             Log.e(TAG, String.format(Locale.getDefault(),"calibrate: dx=%d,dy=%d",dx,dy));
