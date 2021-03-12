@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.deepmirror.deepsdk.DeepSDK;
 import com.deepmirror.deepsdk.imageProcessor.scan.ScanCallback;
 import com.deepmirror.deepsdk.imageProcessor.scan.ScanResult;
-import com.deepmirror.deepsdk.io.socket.UdpManager;
-import com.deepmirror.deepsdk.protocol.exception.ProtocolException;
 import com.deepmirror.deepsdk.view.CameraView;
 import com.deepmirror.host.databinding.ActivityCameraBinding;
 
@@ -32,8 +30,9 @@ public class CameraActivity extends AppCompatActivity {
     private CameraView camView;
     private BeepManager mBeepManager;
 
-    private int roiX=0;
-    private int roiY=0;
+    private int roiX = 0;
+    private int roiY = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -216,25 +215,21 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void calibrate() {
-        mNeedRender=false;
+        mNeedRender = false;
         camView.startCalibration((dx, dy) -> {
             setGlobalAEAF();
-            Log.e(TAG, String.format(Locale.getDefault(),"calibrate: dx=%d,dy=%d",dx,dy));
+            Log.e(TAG, String.format(Locale.getDefault(), "calibrate: dx=%d,dy=%d", dx, dy));
             Toast.makeText(CameraActivity.this, String.format(Locale.getDefault(), "Calibrate success,dx=%d,dy=%d", dx, dy), Toast.LENGTH_SHORT).show();
-            roiX=dx;
-            roiY=dy;
+            roiX = dx;
+            roiY = dy;
             setRoi();
             startScanBarcode();
         });
     }
 
     private void setRoi() {
-        try {
-            UdpManager.getInstance().setRoiAE(roiX, roiY);
-            UdpManager.getInstance().setRoiAF(roiX, roiY);
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        }
+        camView.setRoiAE(roiX, roiY);
+        camView.setRoiAF(roiX, roiY);
     }
 
     private void enableMask() {
@@ -279,12 +274,8 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void setGlobalAEAF() {
-        try {
-            UdpManager.getInstance().setGlobalAE();
-            UdpManager.getInstance().setGlobalAF();
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        }
+        camView.setGlobalAE();
+        camView.setGlobalAF();
     }
 
 
